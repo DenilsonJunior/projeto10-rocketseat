@@ -1,0 +1,139 @@
+* {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+
+:root {
+    font-size: 62.5%;
+
+    --color01: #8E9AAF;
+    --color02: #EFF1FF;
+    --color03: #CBC0D3;
+    --color04: #FEEAFA;
+
+    --colorWhite: #fff;
+
+    --font01: 'Staatliches', cursive;
+    --font02: 'Palanquin', sans-serif;
+
+    --shadow: 0.2rem 0.2rem 0.3rem #0003;
+}
+
+body {
+    text-align: center;
+    background-color: var(--color02);
+}
+
+header {
+    background-color: var(--color01);
+    height: 32rem;
+    position: relative;
+}
+
+header img {
+    padding: 4rem 0;
+    width: 20rem;
+    filter: drop-shadow(var(--shadow));
+}
+
+header h1 {
+    width: 100%;
+    background-color: var(--color03);
+    color: var(--colorWhite);
+    font-family: var(--font01);
+    text-transform: uppercase;
+    font-weight: 500;
+    font-size: 4rem;
+    line-height: 3.4rem;
+    letter-spacing: 0.05em;
+    text-shadow: var(--shadow);
+    padding: .8rem;
+    position: absolute;
+    left: 0;
+    bottom: 2.9rem;
+    z-index: 1;
+}
+
+main {
+    max-width: 120rem;
+    padding: 3.2rem;
+    margin: auto;
+}
+
+main section p {
+    font-size: 1.6rem;
+    font-family: var(--font02);
+    font-weight: 400;
+    font-size: 1.6rem;
+    line-height: 2rem;
+}
+
+main .control-card {
+    display: grid;
+    gap: 3.2rem;
+    margin: 6.2rem 0;
+}
+
+main .control-card .card {
+    height: fit-content;
+    position: relative;
+    overflow: hidden;
+    border-radius: 2rem;
+}
+
+main .control-card .card button {
+    position: absolute;
+    z-index: 1;
+    top: 1.6rem;
+    right: 1.6rem;
+    font-size: var(--font02);
+    background-color: var(--color04);
+    font-family: var(--font01);
+    letter-spacing: 0.05em;
+    font-weight: 400;
+    font-size: 2rem;
+    line-height: 3.4rem;
+    border-radius: 2rem;
+    padding: .5rem 2.4rem;
+    border: none;
+    cursor: pointer;
+}
+
+main .control-card .card img {
+    position: relative;
+    width: 100%;
+    transition-duration: .3s;
+    transform: scale(1.02);
+    filter: brightness(0.6) blur(1px);
+}
+
+main .control-card .card button:hover ~img {
+    transform: scale(1.1);
+    transition-duration: .3s;
+    filter: brightness(1);
+}
+
+@media only screen and (min-width: 600px) {
+    main .control-card {
+        grid-template-areas: 
+        "a a b b"
+        "a a d d"
+        "c c d d";
+    }
+    main .control-card .card:nth-child(1) {
+        grid-area: b;
+    }
+    
+    main .control-card .card:nth-child(2) {
+        grid-area: a;
+    }
+    
+    main .control-card .card:nth-child(3) {
+        grid-area: c;
+    }
+    
+    main .control-card .card:nth-child(4) {
+        grid-area: d;
+    }
+}
